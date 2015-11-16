@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2C229EAF3857244AEFB57CB2680C23676FA39A06",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "EB4DB6BA-E7C9-43D8-A956-40FCEA37D431" : 0,
+    "2C229EAF3857244AEFB57CB2680C23676FA39A06" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "FE51F8F8-DECC-49A6-8657-59E60D24A075",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "EB4DB6BA-E7C9-43D8-A956-40FCEA37D431" : "work",
+    "2C229EAF3857244AEFB57CB2680C23676FA39A06" : "jiading_swift\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "swift_test",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "swift_test\/swift_test.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/he-mark-qinglong\/jiading_swift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2C229EAF3857244AEFB57CB2680C23676FA39A06"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/192.168.5.146\/svn\/mobile",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EB4DB6BA-E7C9-43D8-A956-40FCEA37D431"
+    }
+  ]
+}
