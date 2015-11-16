@@ -14,29 +14,29 @@ func isIphone5() -> Bool{
 }
 
 class MainVC: UIViewController{
-    @IBOutlet var changguan_btn : UIButton
-    @IBOutlet var zhanpin_btn : UIButton
-    @IBOutlet var shoucang_btn : UIButton
-    @IBOutlet var mainView : UIView
+    @IBOutlet var changguan_btn : UIButton!
+    @IBOutlet var zhanpin_btn : UIButton!
+    @IBOutlet var shoucang_btn : UIButton!
+    @IBOutlet var mainView : UIView!
     
-    @IBOutlet var tableView : VenueTable
-    @IBOutlet var scrollView : UIScrollView
+    @IBOutlet var tableView : VenueTable!
+    @IBOutlet var scrollView : UIScrollView!
     
-    @IBOutlet var qiciBtn : UIButton
-    @IBOutlet var huihuaBtn : UIButton
-    @IBOutlet var yuqiBtn : UIButton
-    @IBOutlet var wenhuajiadingBtn : UIButton
-    @IBOutlet var zukeBtn : UIButton
-    @IBOutlet var shufaBtn : UIButton
-    @IBOutlet var qingtongBtn : UIButton
-    @IBOutlet var kejuBtn : UIButton
+    @IBOutlet var qiciBtn : UIButton!
+    @IBOutlet var huihuaBtn : UIButton!
+    @IBOutlet var yuqiBtn : UIButton!
+    @IBOutlet var wenhuajiadingBtn : UIButton!
+    @IBOutlet var zukeBtn : UIButton!
+    @IBOutlet var shufaBtn : UIButton!
+    @IBOutlet var qingtongBtn : UIButton!
+    @IBOutlet var kejuBtn : UIButton!
     
-    @IBOutlet var topBtnImg : UIImageView
+    @IBOutlet var topBtnImg : UIImageView!
     
     func rac_settings(){
         
         //使用这句话之后只需要改变scrollViewB是否隐藏就可以了，另一个会自动跟着变成相反的状态
-        RAC(self.scrollView, "hidden") <~ RACObserve(self.tableView, "hidden")
+        RAC(self.scrollView, "hidden") <= RACObserve(self.tableView, keyPath: "hidden")
             .map{  value in
                 //不通的按钮点击会改变hidden属性，然后跟着改变顶部图片的内容。
                 if(value.boolValue == true){
@@ -63,7 +63,7 @@ class MainVC: UIViewController{
             .subscribeNext{
                 _ in
                 let vc = UIViewController();
-                self.navigationController.pushViewController(vc, animated:false);
+                self.navigationController?.pushViewController(vc, animated:false);
                 //设置标题和背景
                 let lb = UILabel(frame:CGRectMake(0, 0, 100, 30))
                 lb.font      = UIFont(name:"", size:15)
@@ -92,13 +92,13 @@ class MainVC: UIViewController{
             "青铜":[self.qingtongBtn, qingtong_vc],
             "科举":[self.kejuBtn, keju_vc]]
         //定制每个button事件跳转的视图控制器。
-        for (key : AnyObject, value : AnyObject ) in btns2Actions {
-            let array = value as NSArray;
-            let btn        = array[0] as UIButton;
-            let vc:UIViewController = array[1] as UIViewController;
+        for (_, value): (AnyObject, AnyObject) in btns2Actions {
+            let array = value as! NSArray;
+            let btn        = array[0]as! UIButton;
+            let vc:UIViewController = array[1] as! UIViewController;
             btn.rac_signalForControlEvents(UIControlEvents.TouchUpInside)
                 .subscribeNext { _ in
-                    self.navigationController.pushViewController(vc, animated:false)
+                    self.navigationController?.pushViewController(vc, animated:false)
             }
         }
     }
@@ -106,12 +106,12 @@ class MainVC: UIViewController{
     //设置导航栏隐藏
     override func viewDidAppear(animated:Bool){
         super.viewDidAppear(animated)
-        self.navigationController.setNavigationBarHidden(true, animated:true);
+        self.navigationController?.setNavigationBarHidden(true, animated:true);
     }
     
     override func viewDidDisappear(animated:Bool){
         super.viewDidDisappear(animated)
-        self.navigationController.setNavigationBarHidden(false, animated:false);
+        self.navigationController?.setNavigationBarHidden(false, animated:false);
     }
     
     override func viewDidLoad() {
